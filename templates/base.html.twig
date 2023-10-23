@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Accueil</title>
+        <title> {% block title %}Accueil{% endblock %}</title>
 
         <!-- Balises pour le responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,10 +21,10 @@
                     <a class="nav-link active" href="{{ path('app_home')}}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="mountain.html">Montagne</a>
+                    <a class="nav-link " href="{{ path('app_mountain')}}">Montagne</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="beaches.html">Plages</a>
+                    <a class="nav-link " href="{{ path('app_beach')}}">Plages</a>
                 </li>
             </ul>
         </nav>
