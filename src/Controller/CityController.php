@@ -16,7 +16,6 @@ class CityController extends AbstractController
     public function show($id): Response
     {
         $cityWeather = WeatherModel::getWeatherByCityIndex($id);
-        dump($cityWeather);
 
         return $this->render('city/city.html.twig', [
             'cityWeather' => $cityWeather,
