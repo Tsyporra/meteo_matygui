@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+            <!-- Content (les pages) -->
+            <div class="col-9">
+
+                <h1 class="mb-5">Bienvenue sur la météo des villes !</h1>
+                {% for index, city in cities %}
+                    <div class="item item--bg-snow">
+                        <div class="item--city"><a href="{{path('app_city_Weather', {'id': index})}}">{{city.city}}</a></div>
+                        <div class="item--forecast">{{city.date}} : {{city.min}} / {{city.max}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+{% endblock %}
