@@ -16,9 +16,13 @@ class CityController extends AbstractController
     public function show($id): Response
     {
         $cityWeather = WeatherModel::getWeatherByCityIndex($id);
+        if(!isset($cityWeather)) {
+            throw $this->createNotFoundException('Ville non trouvée.');
+        }
 
         return $this->render('city/city.html.twig', [
             'cityWeather' => $cityWeather,
         ]);
     }
+
 }
